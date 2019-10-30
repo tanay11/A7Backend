@@ -1,0 +1,252 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "first_name": "Robert",
+      "last_name": "Schwartz",
+      "email": "rob23@gmail.com"
+    },
+    {
+      "id": 2,
+      "first_name": "Lucy",
+      "last_name": "Ballmer",
+      "email": "lucyb56@gmail.com"
+    },
+    {
+      "id": 3,
+      "first_name": "Anna",
+      "last_name": "Smith",
+      "email": "annasmith23@gmail.com"
+    },
+    {
+      "id": 4,
+      "first_name": "Robert",
+      "last_name": "Brown",
+      "email": "bobbrown432@yahoo.com"
+    },
+    {
+      "id": 5,
+      "first_name": "Roger",
+      "last_name": "Bacon",
+      "email": "rogerbacon12@yahoo.com"
+    },
+    {
+      "name": "tajsd",
+      "emailId": "t@t.com",
+      "contact": "78687575",
+      "zipcode": "462024",
+      "product": [],
+      "id": 6
+    },
+    {
+      "name": "tajsd",
+      "emailId": "t@t.com",
+      "contact": "78687575",
+      "zipcode": "462024",
+      "product": [],
+      "id": 8
+    },
+    {
+      "id": 15,
+      "first_name": "Roger",
+      "last_name": "anas",
+      "email": "rogerbacon12@gmail.com"
+    },
+    {
+      "id": 16,
+      "first_name": "Robert",
+      "last_name": "Schwartz",
+      "email": "rob23@gmail.com",
+      "product": [
+        {
+          "id": 1,
+          "title": "Silky Shine",
+          "img": "img/product-1.png"
+        }
+      ]
+    },
+    {
+      "name": "ram",
+      "email": "r@r.com",
+      "contact": "464654564654",
+      "location": "ndakjsadn",
+      "zipcode": "454681",
+      "product": [],
+      "id": 17
+    },
+    {
+      "name": "roshan",
+      "email": "luc@luc.com",
+      "contact": "4646446464",
+      "location": "gagsbab",
+      "zipcode": "426548",
+      "product": [],
+      "id": 18
+    },
+    {
+      "name": "Newuser",
+      "email": "n@n.com",
+      "contact": "146546465",
+      "location": "bjgjhjh",
+      "zipcode": "135655",
+      "product": [],
+      "id": 19
+    },
+    {
+      "name": "nEWNAVIN",
+      "email": "g@bahsg.com",
+      "contact": "546485113254",
+      "location": "bsjadhgjdahb",
+      "zipcode": "456456",
+      "product": [],
+      "id": 20
+    },
+    {
+      "name": "raju",
+      "email": "raju@gmail.com",
+      "contact": "7582038031",
+      "location": "kota",
+      "zipcode": "462123",
+      "product": [],
+      "id": 21
+    },
+    {
+      "name": "happy",
+      "email": "iamhappy@g.com",
+      "contact": "78784561235",
+      "location": "hsaghjgas",
+      "zipcode": "899456",
+      "product": [],
+      "id": 22
+    },
+    {
+      "name": "ashish",
+      "email": "a@ashu.com",
+      "contact": "7894561236",
+      "location": "nasik",
+      "zipcode": "456123",
+      "product": [],
+      "id": 24
+    },
+    {
+      "name": "rohan",
+      "email": "r@rohan.com",
+      "contact": "4561237894",
+      "location": "rest",
+      "zipcode": "456789",
+      "product": [
+        {
+          "id": 2,
+          "title": "Lucian Premium",
+          "img": "img/product-2.png",
+          "price": 1600,
+          "company": "Lucian",
+          "info": "Lorem ipsum dolor amet offal butcher quinoa sustainable gastropub, echo park actually green juice sriracha paleo. Brooklyn sriracha semiotics, DIY coloring book mixtape craft beer sartorial hella blue bottle. Tote bag wolf authentic try-hard put a bird on it mumblecore. Unicorn lumbersexual master cleanse blog hella VHS, vaporware sartorial church-key cardigan single-origin coffee lo-fi organic asymmetrical. Taxidermy semiotics celiac stumptown scenester normcore, ethical helvetica photo booth gentrify.",
+          "inCart": true,
+          "count": 1,
+          "total": 1600
+        }
+      ],
+      "id": 25
+    },
+    {
+      "name": "shanky",
+      "email": "shaks@s.com",
+      "contact": "4567894561",
+      "location": "tani",
+      "zipcode": "456987",
+      "product": [],
+      "id": 26
+    },
+    {
+      "name": "sha@djf",
+      "email": "sjdfjd@gc.com",
+      "contact": "2122333",
+      "location": "kdofj",
+      "zipcode": "2",
+      "product": [
+        {
+          "id": 3,
+          "title": "Acrylic Distember",
+          "img": "img/product-3.png",
+          "price": 800,
+          "company": "Lucian",
+          "info": "Lorem ipsum dolor amet offal butcher quinoa sustainable gastropub, echo park actually green juice sriracha paleo. Brooklyn sriracha semiotics, DIY coloring book mixtape craft beer sartorial hella blue bottle. Tote bag wolf authentic try-hard put a bird on it mumblecore. Unicorn lumbersexual master cleanse blog hella VHS, vaporware sartorial church-key cardigan single-origin coffee lo-fi organic asymmetrical. Taxidermy semiotics celiac stumptown scenester normcore, ethical helvetica photo booth gentrify.",
+          "inCart": true,
+          "count": 1,
+          "total": 800,
+          "Availabilty": [
+            {
+              "size": "M",
+              "amount": [
+                {
+                  "key": 19,
+                  "color": "Red",
+                  "quantity": 15
+                },
+                {
+                  "key": 20,
+                  "color": "Blue",
+                  "quantity": 15
+                },
+                {
+                  "key": 21,
+                  "color": "Black",
+                  "quantity": 15
+                }
+              ]
+            },
+            {
+              "size": "S",
+              "amount": [
+                {
+                  "key": 22,
+                  "color": "Red",
+                  "quantity": 15
+                },
+                {
+                  "key": 23,
+                  "color": "Blue",
+                  "quantity": 15
+                },
+                {
+                  "key": 24,
+                  "color": "Black",
+                  "quantity": 15
+                }
+              ]
+            },
+            {
+              "size": "XL",
+              "amount": [
+                {
+                  "key": 25,
+                  "color": "Red",
+                  "quantity": 15
+                },
+                {
+                  "key": 26,
+                  "color": "Blue",
+                  "quantity": 15
+                },
+                {
+                  "key": 27,
+                  "color": "Black",
+                  "quantity": 15
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "color": "NagpuriOrange",
+          "price": 1000,
+          "incart": true,
+          "count": 1,
+          "total": 1000
+        }
+      ],
+      "id": 27
+    }
+  ]
+}
