@@ -7,7 +7,7 @@ const fs = require('fs')
 const http = require('http')
 const path = require('path')
 const app = express();
-const dotenv=require('dotenv');
+const dotenv = require('dotenv');
 dotenv.config();
 
 const cors = (req, res, next) => {
@@ -39,19 +39,17 @@ app.post("/api/form", (req, res) => {
 	res.setHeader("Content-Type", "application/json");
 	res.write("you posted:\n");
 	res.end(JSON.stringify(req.body, null, 2));
-	var transporter = nodemailer.createTransport(sgTransport({
+	var transporter = nodemailer.createTransport({
+		service: 'gmail',
 		auth: {
-			api_key: process.env.API_KEY // your api key here, better hide it in env vars
-		},
-		tls: {
-			// do not fail on invalid certs
-			rejectUnauthorized: false
+			user: "tanaymainkar25@gmail.com",
+			pass: "tannu5934"
 		}
-	}));
+	});
 	const mailOptions = {
 		from: "a7.nasik@gmail.com", // sender address
 		to: req.body.email,
-		cc: "a7.nasik@gmail.com",
+		cc: "",
 		subject: "Registration successful", // Subject line
 		html: `<div><h2>Lucian Paints Welcomes You..</h2> <br/>Details -  ${JSON.stringify(req.body)}</div>`
 
