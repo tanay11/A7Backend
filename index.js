@@ -7,7 +7,7 @@ const fs = require('fs')
 const http = require('http')
 const path = require('path')
 const app = express();
-const dotenv = require('dotenv');
+const dotenv=require('dotenv');
 dotenv.config();
 
 const cors = (req, res, next) => {
@@ -42,13 +42,13 @@ app.post("/api/form", (req, res) => {
 	var transporter = nodemailer.createTransport({
 		service: 'gmail',
 		auth: {
-			user: "tanaymainkar25@gmail.com",
-			pass: "tannu5934"
+			user: "a7.nasik@gmail.com",
+			pass: "Avisha@1979"
 		}
 	});
 	const mailOptions = {
 		from: "a7.nasik@gmail.com", // sender address
-		to: req.body.email,
+		to: "tanaymainker25@gmail.com",
 		cc: "",
 		subject: "Registration successful", // Subject line
 		html: `<div><h2>Lucian Paints Welcomes You..</h2> <br/>Details -  ${JSON.stringify(req.body)}</div>`
