@@ -9,7 +9,6 @@ const path = require('path')
 const app = express();
 const dotenv=require('dotenv');
 dotenv.config();
-
 const cors = (req, res, next) => {
 	res.header("Access-Control-Allow-Origin", "*"); // update to match the domain you will make the request from
 	res.header(
@@ -42,13 +41,13 @@ app.post("/api/form", (req, res) => {
 	var transporter = nodemailer.createTransport({
 		service: 'gmail',
 		auth: {
-			user: "a7.nasik@gmail.com",
-			pass: "Avisha@1979"
+			user: process.env.NAME,
+			pass: process.env.PASSWORD
 		}
 	});
 	const mailOptions = {
 		from: "a7.nasik@gmail.com", // sender address
-		to: "tanaymainker25@gmail.com",
+		to: req.body.email,
 		cc: "",
 		subject: "Registration successful", // Subject line
 		html: `<div><h2>Lucian Paints Welcomes You..</h2> <br/>Details -  ${JSON.stringify(req.body)}</div>`
