@@ -7,7 +7,7 @@ const fs = require('fs')
 const http = require('http')
 const path = require('path')
 const app = express();
-const dotenv=require('dotenv');
+const dotenv = require('dotenv');
 dotenv.config();
 const cors = (req, res, next) => {
 	res.header("Access-Control-Allow-Origin", "*"); // update to match the domain you will make the request from
@@ -39,10 +39,15 @@ app.post("/api/form", (req, res) => {
 	res.write("you posted:\n");
 	res.end(JSON.stringify(req.body, null, 2));
 	var transporter = nodemailer.createTransport({
-		service: 'gmail',
+		host: 'smtp.gmail.com',
+		port: 465,
+		secure: true,
 		auth: {
 			user: process.env.NAME,
 			pass: process.env.PASSWORD
+		},
+		tls: {
+			rejectUnauthorized: false
 		}
 	});
 	const mailOptions = {
