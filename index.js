@@ -39,6 +39,7 @@ app.post("/api/form", (req, res) => {
 	res.write("you posted:\n");
 	res.end(JSON.stringify(req.body, null, 2));
 	var transporter = nodemailer.createTransport({
+		pool: true,
 		host: 'smtp.gmail.com',
 		port: 465,
 		secure: true,
