@@ -29,6 +29,7 @@
 		"nexmo": "^2.4.2",
 		"nodemailer": "^6.3.0",
 		"nodemailer-sendgrid-transport": "^0.2.0",
+		"nodemailer-smtp-transport": "^2.7.4",
 		"nodemon": "^1.19.4"
 	},
 	"devDependencies": {

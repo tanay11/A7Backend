@@ -3,6 +3,7 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const nodemailer = require('nodemailer');
 const sgTransport = require('nodemailer-sendgrid-transport');
+const smtpTransport = require('nodemailer-smtp-transport');
 const fs = require('fs')
 const http = require('http')
 const path = require('path')
@@ -38,20 +39,20 @@ app.post("/api/form", (req, res) => {
 	res.setHeader("Content-Type", "application/json");
 	res.write("you posted:\n");
 	res.end(JSON.stringify(req.body, null, 2));
-	var transporter = nodemailer.createTransport({
+	var transporter = nodemailer.createTransport(smtpTransport({
 		pool: true,
 		host: 'smtp.gmail.com',
 		port: 465,
 		secure: true,
 		auth: {
-			user: process.env.NAME,
-			pass: process.env.PASSWORD
+			user: "tanaymainkar25@gmail.com",
+			pass: "tannu5934"
 		},
 		authMethod: "PLAIN",
 		tls: {
 			rejectUnauthorized: false
 		}
-	});
+	}));
 	const mailOptions = {
 		from: "tanaymainkar25@gmail.com", // sender address
 		to: "tanaymainker25@gmail.com",
