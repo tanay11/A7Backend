@@ -62,13 +62,13 @@ app.post("/api/form", (req, res) => {
 	res.end(JSON.stringify(req.body, null, 2));
 	var transporter = nodemailer.createTransport(sgTransport({
 		auth: {
-			api_user:"tanaymainkar25",
-			api_key:"tannu#209141"
+			api_user:process.env.api_user,
+			api_key:process.env.api_key
 		}
 	}));
 	const mailOptions = {
 		from: "a7.nasik@gmail.com", // sender address
-		to: "tanaymainkar25@gmail.com",
+		to: req.body.email,
 		cc: "",
 		subject: "Registration successful", // Subject line
 		html: `<div><h2>Lucian Paints Welcomes You..</h2> <br/>Details -  ${JSON.stringify(req.body)}</div>`
