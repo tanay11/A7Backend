@@ -62,8 +62,8 @@ app.post("/api/form", (req, res) => {
 	res.end(JSON.stringify(req.body, null, 2));
 	var transporter = nodemailer.createTransport(sgTransport({
 		auth: {
-			api_user:process.env.api_user,
-			api_key:process.env.api_key
+			api_user:"tanaymainkar25",
+			api_key:"tannu#209141"
 		}
 	}));
 	const mailOptions = {
