@@ -4,6 +4,7 @@ const bodyParser = require('body-parser')
 const nodemailer = require('nodemailer');
 const sgTransport = require('nodemailer-sendgrid-transport');
 const smtpTransport = require('nodemailer-smtp-transport');
+const sendgrid = require('sendgrid')("tanaymainkar25","tannu#209141")
 const fs = require('fs')
 const http = require('http')
 const path = require('path')
@@ -32,6 +33,26 @@ app.get("/", (req, res) => {
 });
 
 
+// app.post("/api/form", (req, res) => {
+// 	//res.send(bodyParser(req));
+// 	//console.log(bodyParser(req));
+// 	console.log("Alag sa identify", req.body.email)
+// 	sendgrid.send({
+// 		to:"tanaymainker25@gmail.com",
+// 		from:"tanaymainkar25@gmail.com",
+// 		subject:"Hello World",
+// 		text:"Try karte hai"
+// 	},function(err,res){
+// 		if(err){
+// 			console.log("ab kaise hoga",err)
+// 		}
+// 		else{
+// 			console.log("chal k dikha de",res)
+// 		}
+// 	})
+// });
+
+
 app.post("/api/form", (req, res) => {
 	//res.send(bodyParser(req));
 	//console.log(bodyParser(req));
@@ -39,18 +60,10 @@ app.post("/api/form", (req, res) => {
 	res.setHeader("Content-Type", "application/json");
 	res.write("you posted:\n");
 	res.end(JSON.stringify(req.body, null, 2));
-	var transporter = nodemailer.createTransport(smtpTransport({
-		pool: true,
-		host: 'smtp.gmail.com',
-		port: 465,
-		secure: true,
+	var transporter = nodemailer.createTransport(sgTransport({
 		auth: {
-			user: "tanaymainkar25@gmail.com",
-			pass: "tannu5934"
-		},
-		authMethod: "PLAIN",
-		tls: {
-			rejectUnauthorized: false
+			api_user:"tanaymainkar25",
+			api_key:"tannu#209141"
 		}
 	}));
 	const mailOptions = {
@@ -75,6 +88,27 @@ app.post("/api/form", (req, res) => {
 		}
 	});
 });
+
+
+// var helper = require('sendgrid').mail;
+// var from_email = new helper.Email('tanaymainkar25@gmail.com');
+// var to_email = new helper.Email('tanaymainker25@gmail.com');
+// var subject = 'Hello World from the SendGrid Node.js Library!';
+// var content = new helper.Content('text/plain', 'Hello, Email!');
+// var mail = new helper.Mail(from_email, subject, to_email, content);
+
+// var sg = require('sendgrid')(process.env.SENDGRID_API_KEY);
+// var request = sg.emptyRequest({
+//   method: 'POST',
+//   path: '/api/form',
+//   body: mail.toJSON(),
+// });
+
+// sg.API(request, function(error, response) {
+//   console.log(response.statusCode);
+//   console.log(response.body);
+//   console.log(response.headers);
+// });
 
 if (process.env.NODE_ENV === "production") {
 	// app.use(express.static('Frontend/build'));
