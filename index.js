@@ -4,7 +4,7 @@ const bodyParser = require('body-parser')
 const nodemailer = require('nodemailer');
 const sgTransport = require('nodemailer-sendgrid-transport');
 const smtpTransport = require('nodemailer-smtp-transport');
-const sendgrid = require('sendgrid')("tanaymainkar25","tannu#209141")
+const sendgrid = require('sendgrid')("tanaymainkar25", "tannu#209141")
 const fs = require('fs')
 const http = require('http')
 const path = require('path')
@@ -61,9 +61,13 @@ app.post("/api/form", (req, res) => {
 	res.write("you posted:\n");
 	res.end(JSON.stringify(req.body, null, 2));
 	var transporter = nodemailer.createTransport(sgTransport({
+		pool: true,
+		host: "smtp.sendgrid.net",
+		port: 587,
+		secure: false,
 		auth: {
-			api_user:"tanaymainkar25",
-			api_key:"tannu#209141"
+			api_user: "tanaymainkar25",
+			api_key: "tannu#209141"
 		}
 	}));
 	const mailOptions = {
@@ -84,7 +88,7 @@ app.post("/api/form", (req, res) => {
 		if (error) {
 			console.log(error);
 		} else {
-			console.log("Server is ready to take our messages",success);
+			console.log("Server is ready to take our messages", success);
 		}
 	});
 });
