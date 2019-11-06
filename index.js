@@ -52,7 +52,6 @@ app.get("/", (req, res) => {
 // 	})
 // });
 
-
 app.post("/api/form", (req, res) => {
 	//res.send(bodyParser(req));
 	//console.log(bodyParser(req));
@@ -66,8 +65,8 @@ app.post("/api/form", (req, res) => {
 		port: 587,
 		secure: false,
 		auth: {
-			api_user: "tanaymainkar25",
-			api_key: "tannu#209141"
+			api_user: process.env.api_user,
+			api_key: process.env.api_key
 		}
 	}));
 	const mailOptions = {
