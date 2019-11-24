@@ -36,16 +36,13 @@ const msg = {
   text: 'Lucian Paints - Kam Daam , Damdaar Kaam',
   html: `<div><h2>Lucian Paints Welcomes You..</h2> <br/>Details -  ${JSON.stringify(req.body)}</div>`,
 };
-console.log("Response",res);
-console.log("request",req);
-console.log("Response",err);
 sgMail.send(msg).then(response => {
 	console.log("Chalo lets check ans",response);
   })
   .catch(error => {
 	console.log("ye raha error",error)
   });
-console.log("Isse pehle chal")
+console.log("Isse pehle chal",process.env.SENDGRID_API_KEY)
 })
 
 // app.use(bodyParser.json());
