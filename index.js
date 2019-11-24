@@ -26,7 +26,7 @@ app.use([express.json(), cors, bodyParser.urlencoded({ extended: false })]);
 
 
 
-app.post("/api/form", (req, res) => {
+app.post("/api/form", (req, res,err) => {
 const sgMail = require('@sendgrid/mail');
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 const msg = {
@@ -36,15 +36,21 @@ const msg = {
   text: 'Lucian Paints - Kam Daam , Damdaar Kaam',
   html: `<div><h2>Lucian Paints Welcomes You..</h2> <br/>Details -  ${JSON.stringify(req.body)}</div>`,
 };
-sgMail.send(msg);
+console.log("Response",res);
+console.log("request",req);
+console.log("Response",err);
+sgMail.send(msg).then(response => {
+	console.log("Chalo lets check ans",response);
+  })
+  .catch(error => {
+	console.log("ye raha error",error)
+  });
 console.log("Isse pehle chal")
-res.send("trying things workin out")
 })
 
 // app.use(bodyParser.json());
 // app.use(bodyParser.urlencoded({ extended: false }));
 app.get("/", (req, res) => {
-	console.log(process.env.USERNAME)
 	return res.status(200).send({
 		message: "YAY! Congratulations! Your first endpoint is working"
 	});
