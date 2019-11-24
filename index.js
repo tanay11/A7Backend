@@ -11,6 +11,21 @@ const app = express();
 const dotenv = require('dotenv');
 dotenv.config();
 
+
+
+const cors = (req, res, next) => {
+	res.header("Access-Control-Allow-Origin", "*"); // update to match the domain you will make the request from
+	res.header(
+		"Access-Control-Allow-Headers",
+		"Origin, X-Requested-With, Content-Type, Accept"
+	);
+	next();
+};
+
+app.use([express.json(), cors, bodyParser.urlencoded({ extended: false })]);
+
+
+
 app.post("/api/form", (req, res) => {
 const sgMail = require('@sendgrid/mail');
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
@@ -25,18 +40,6 @@ sgMail.send(msg);
 console.log("Isse pehle chal")
 res.send("trying things workin out")
 })
-
-const cors = (req, res, next) => {
-	res.header("Access-Control-Allow-Origin", "*"); // update to match the domain you will make the request from
-	res.header(
-		"Access-Control-Allow-Headers",
-		"Origin, X-Requested-With, Content-Type, Accept"
-	);
-	next();
-};
-
-app.use([express.json(), cors, bodyParser.urlencoded({ extended: false })]);
-
 
 // app.use(bodyParser.json());
 // app.use(bodyParser.urlencoded({ extended: false }));
