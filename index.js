@@ -29,8 +29,9 @@ app.post("/api/form", (req, res,err) => {
 const sgMail = require('@sendgrid/mail');
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 const msg = {
-  to: 'tanaymainkar25@gmail.com',
+  to: req.body.email,
   from: 'a7.nasik@gmail.com',
+  cc:'a7.nasik@gmail.com',
   subject: 'Registration successful',
   text: 'Lucian Paints - Kam Daam , Damdaar Kaam',
   html: `<div><h2>Lucian Paints Welcomes You..</h2> <br/>Details -  ${JSON.stringify(req.body)}</div>`,
