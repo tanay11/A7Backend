@@ -25,7 +25,6 @@ const cors = (req, res, next) => {
 app.use([express.json(), cors, bodyParser.urlencoded({ extended: false })]);
 
 
-
 app.post("/api/form", (req, res,err) => {
 const sgMail = require('@sendgrid/mail');
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
@@ -42,6 +41,7 @@ sgMail.send(msg).then(response => {
   .catch(error => {
 	console.log("ye raha error",error)
   });
+  console.log("Process.env",process.env.NODE_ENV)
 console.log("Isse pehle chal",process.env.SENDGRID_API_KEY)
 })
 
